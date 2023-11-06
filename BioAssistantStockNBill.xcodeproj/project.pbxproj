@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9323493D2AF6E5430088F22E /* OrderData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9323493C2AF6E5430088F22E /* OrderData.json */; };
+		9323493F2AF6E6730088F22E /* JsonDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9323493E2AF6E6730088F22E /* JsonDataHelper.swift */; };
+		932349412AF6F5020088F22E /* OrderData2 in Resources */ = {isa = PBXBuildFile; fileRef = 932349402AF6F5020088F22E /* OrderData2 */; };
 		938AF0E02AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */; };
 		938AF0E22AEB152A000BB4C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0E12AEB152A000BB4C5 /* ContentView.swift */; };
 		938AF0E42AEB152C000BB4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938AF0E32AEB152C000BB4C5 /* Assets.xcassets */; };
 		938AF0E72AEB152C000BB4C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938AF0E62AEB152C000BB4C5 /* Preview Assets.xcassets */; };
+		938AF0F12AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0EF2AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9323493C2AF6E5430088F22E /* OrderData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderData.json; sourceTree = "<group>"; };
+		9323493E2AF6E6730088F22E /* JsonDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataHelper.swift; sourceTree = "<group>"; };
+		932349402AF6F5020088F22E /* OrderData2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrderData2; sourceTree = "<group>"; };
 		938AF0DC2AEB152A000BB4C5 /* BioAssistantStockNBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioAssistantStockNBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAssistantStockNBillApp.swift; sourceTree = "<group>"; };
 		938AF0E12AEB152A000BB4C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		938AF0E32AEB152C000BB4C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		938AF0E62AEB152C000BB4C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		938AF0F02AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BioAssistDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,9 +40,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		932349342AF442940088F22E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9323493B2AF6E4F60088F22E /* AppData */ = {
+			isa = PBXGroup;
+			children = (
+				9323493C2AF6E5430088F22E /* OrderData.json */,
+				9323493E2AF6E6730088F22E /* JsonDataHelper.swift */,
+			);
+			path = AppData;
+			sourceTree = "<group>";
+		};
 		938AF0D32AEB152A000BB4C5 = {
 			isa = PBXGroup;
 			children = (
+				932349402AF6F5020088F22E /* OrderData2 */,
 				938AF0DE2AEB152A000BB4C5 /* BioAssistantStockNBill */,
 				938AF0DD2AEB152A000BB4C5 /* Products */,
 			);
@@ -51,6 +76,8 @@
 		938AF0DE2AEB152A000BB4C5 /* BioAssistantStockNBill */ = {
 			isa = PBXGroup;
 			children = (
+				9323493B2AF6E4F60088F22E /* AppData */,
+				932349342AF442940088F22E /* ViewModels */,
 				938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */,
 				938AF0EE2AEB1C15000BB4C5 /* DataModels */,
 				938AF0ED2AEB1BF9000BB4C5 /* Views */,
@@ -79,6 +106,7 @@
 		938AF0EE2AEB1C15000BB4C5 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				938AF0EF2AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -143,6 +171,8 @@
 			files = (
 				938AF0E72AEB152C000BB4C5 /* Preview Assets.xcassets in Resources */,
 				938AF0E42AEB152C000BB4C5 /* Assets.xcassets in Resources */,
+				932349412AF6F5020088F22E /* OrderData2 in Resources */,
+				9323493D2AF6E5430088F22E /* OrderData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				938AF0E22AEB152A000BB4C5 /* ContentView.swift in Sources */,
+				938AF0F12AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld in Sources */,
 				938AF0E02AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift in Sources */,
+				9323493F2AF6E6730088F22E /* JsonDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +392,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		938AF0EF2AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				938AF0F02AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodel */,
+			);
+			currentVersion = 938AF0F02AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodel */;
+			path = BioAssistDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 938AF0D42AEB152A000BB4C5 /* Project object */;
 }
