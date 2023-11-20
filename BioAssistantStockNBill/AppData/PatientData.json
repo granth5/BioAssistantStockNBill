@@ -1,0 +1,28 @@
+[
+    {
+        "patientId": 1,
+        "lastName": "Doe",
+        "firstName": "John",
+        "address1": "123 Anywhere Ln",
+        "address2": "Ste 111",
+        "city": "Rochester",
+        "state": "MI",
+        "zip": "48307",
+        "phone": "111-222-3333",
+        "dateOfBirth": "1980-01-15",
+        "gender": "M"
+    },
+    {
+        "patientId": 2,
+        "lastName": "Nobody",
+        "firstName": "Jane",
+        "address1": "1313 Mockingbird Ln",
+        "address2": "(upstairs)",
+        "city": "Shelby",
+        "state": "MI",
+        "zip": "48307",
+        "phone": "111-222-3333",
+        "dateOfBirth": "1980-01-15",
+        "gender": "M"
+    }
+]

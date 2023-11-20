@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BioAssistantStockNBillApp: App {
+    @StateObject private var cdDataController = CDDataController()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            ContentView(cdDataController: cdDataController)
+                .environment(\.managedObjectContext, cdDataController.container.viewContext)
         }
     }
 }

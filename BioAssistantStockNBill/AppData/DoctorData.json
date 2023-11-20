@@ -1,0 +1,15 @@
+
+[
+    {
+        "doctorId": 1,
+        "lastName": "Smith",
+        "firstName": "Doctor",
+        "address1": "999 Nowheres Dr",
+        "address2": "Ste 101",
+        "city": "Troy",
+        "state": "MI",
+        "zip": "48333",
+        "phone": "999-888-7777",
+        "npiNumber": "NPI_NUM"
+    }
+]

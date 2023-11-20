@@ -8,56 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var orders = ReadJsonData()
+    @ObservedObject var cdDataController: CDDataController
+    @ObservedObject var jsonHelper: JsonDataHelper
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    
+    init(cdDataController: CDDataController) {
+        self.cdDataController = cdDataController
+        self.jsonHelper = JsonDataHelper()
+    }
 
     
     var body: some View {
-        List(orders.orders) { order in
-            VStack {
-                HStack {
-                    Text(dateFormatter.string(from: order.orderDate))
-                    Spacer()
-                    Text(order.lastName)
-                    Spacer()
-                    Text(order.firstName)
-                    Spacer()
-                    Text(order.insuranceType)
-                    Spacer()
-                    Text(order.insuranceName)
-                    Spacer()
-                    Button("Edit") {
-                        
-                    }
-                    Spacer()
-                    Button("Delete") {
-                        
-                    }
+        TabView {
+            OrderListView()
+                .tabItem {
+                    Label("Orders", systemImage: "list.bullet")
                 }
-            }
+            DataAssistView(cdDataController: cdDataController)
+                .environmentObject(jsonHelper)
+                .tabItem {
+                    Label("Data Utils", systemImage: "swiftdata")
+                }
         }
-
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewInterfaceOrientation(.landscapeLeft)
+        ContentView(cdDataController: CDDataController()).previewInterfaceOrientation(.landscapeLeft)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(cdDataController: CDDataController())
 }

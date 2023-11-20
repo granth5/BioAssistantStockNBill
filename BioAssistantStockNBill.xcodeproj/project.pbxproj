@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9323493D2AF6E5430088F22E /* OrderData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9323493C2AF6E5430088F22E /* OrderData.json */; };
+		9323493D2AF6E5430088F22E /* OrderListData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9323493C2AF6E5430088F22E /* OrderListData.json */; };
 		9323493F2AF6E6730088F22E /* JsonDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9323493E2AF6E6730088F22E /* JsonDataHelper.swift */; };
 		932349412AF6F5020088F22E /* OrderData2 in Resources */ = {isa = PBXBuildFile; fileRef = 932349402AF6F5020088F22E /* OrderData2 */; };
+		932349432AFDA5D20088F22E /* NOTES in Resources */ = {isa = PBXBuildFile; fileRef = 932349422AFDA5D20088F22E /* NOTES */; };
+		932349472AFEDC8E0088F22E /* JsonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932349462AFEDC8E0088F22E /* JsonStructs.swift */; };
+		932349492AFEE36F0088F22E /* DoctorData.json in Resources */ = {isa = PBXBuildFile; fileRef = 932349482AFEE36F0088F22E /* DoctorData.json */; };
+		9323494B2AFEEA710088F22E /* PatientData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9323494A2AFEEA710088F22E /* PatientData.json */; };
+		9323494D2AFEF75A0088F22E /* CDDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9323494C2AFEF7590088F22E /* CDDataController.swift */; };
+		932349512AFEFF880088F22E /* ItemData.json in Resources */ = {isa = PBXBuildFile; fileRef = 932349502AFEFF880088F22E /* ItemData.json */; };
+		932349532AFF03B20088F22E /* OrderData.json in Resources */ = {isa = PBXBuildFile; fileRef = 932349522AFF03B20088F22E /* OrderData.json */; };
+		932349552B0031250088F22E /* DataAssistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932349542B0031250088F22E /* DataAssistView.swift */; };
+		932349572B02D0B80088F22E /* OrderItemData.json in Resources */ = {isa = PBXBuildFile; fileRef = 932349562B02D0B80088F22E /* OrderItemData.json */; };
+		932349592B081CB40088F22E /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932349582B081CB40088F22E /* OrderListView.swift */; };
+		9323495D2B0AC71B0088F22E /* InsuranceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9323495C2B0AC71B0088F22E /* InsuranceData.json */; };
 		938AF0E02AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */; };
 		938AF0E22AEB152A000BB4C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0E12AEB152A000BB4C5 /* ContentView.swift */; };
 		938AF0E42AEB152C000BB4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938AF0E32AEB152C000BB4C5 /* Assets.xcassets */; };
@@ -18,9 +29,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9323493C2AF6E5430088F22E /* OrderData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderData.json; sourceTree = "<group>"; };
+		9323493C2AF6E5430088F22E /* OrderListData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderListData.json; sourceTree = "<group>"; };
 		9323493E2AF6E6730088F22E /* JsonDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataHelper.swift; sourceTree = "<group>"; };
 		932349402AF6F5020088F22E /* OrderData2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrderData2; sourceTree = "<group>"; };
+		932349422AFDA5D20088F22E /* NOTES */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTES; sourceTree = "<group>"; };
+		932349462AFEDC8E0088F22E /* JsonStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructs.swift; sourceTree = "<group>"; };
+		932349482AFEE36F0088F22E /* DoctorData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DoctorData.json; sourceTree = "<group>"; };
+		9323494A2AFEEA710088F22E /* PatientData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PatientData.json; sourceTree = "<group>"; };
+		9323494C2AFEF7590088F22E /* CDDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDataController.swift; sourceTree = "<group>"; };
+		932349502AFEFF880088F22E /* ItemData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ItemData.json; sourceTree = "<group>"; };
+		932349522AFF03B20088F22E /* OrderData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderData.json; sourceTree = "<group>"; };
+		932349542B0031250088F22E /* DataAssistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssistView.swift; sourceTree = "<group>"; };
+		932349562B02D0B80088F22E /* OrderItemData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderItemData.json; sourceTree = "<group>"; };
+		932349582B081CB40088F22E /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		9323495C2B0AC71B0088F22E /* InsuranceData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InsuranceData.json; sourceTree = "<group>"; };
 		938AF0DC2AEB152A000BB4C5 /* BioAssistantStockNBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioAssistantStockNBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAssistantStockNBillApp.swift; sourceTree = "<group>"; };
 		938AF0E12AEB152A000BB4C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,8 +72,15 @@
 		9323493B2AF6E4F60088F22E /* AppData */ = {
 			isa = PBXGroup;
 			children = (
-				9323493C2AF6E5430088F22E /* OrderData.json */,
+				9323493C2AF6E5430088F22E /* OrderListData.json */,
 				9323493E2AF6E6730088F22E /* JsonDataHelper.swift */,
+				9323494A2AFEEA710088F22E /* PatientData.json */,
+				932349462AFEDC8E0088F22E /* JsonStructs.swift */,
+				932349482AFEE36F0088F22E /* DoctorData.json */,
+				932349502AFEFF880088F22E /* ItemData.json */,
+				932349522AFF03B20088F22E /* OrderData.json */,
+				932349562B02D0B80088F22E /* OrderItemData.json */,
+				9323495C2B0AC71B0088F22E /* InsuranceData.json */,
 			);
 			path = AppData;
 			sourceTree = "<group>";
@@ -76,13 +105,14 @@
 		938AF0DE2AEB152A000BB4C5 /* BioAssistantStockNBill */ = {
 			isa = PBXGroup;
 			children = (
+				938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */,
 				9323493B2AF6E4F60088F22E /* AppData */,
 				932349342AF442940088F22E /* ViewModels */,
-				938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */,
-				938AF0EE2AEB1C15000BB4C5 /* DataModels */,
+				938AF0EE2AEB1C15000BB4C5 /* DataModel */,
 				938AF0ED2AEB1BF9000BB4C5 /* Views */,
 				938AF0E32AEB152C000BB4C5 /* Assets.xcassets */,
 				938AF0E52AEB152C000BB4C5 /* Preview Content */,
+				932349422AFDA5D20088F22E /* NOTES */,
 			);
 			path = BioAssistantStockNBill;
 			sourceTree = "<group>";
@@ -99,16 +129,19 @@
 			isa = PBXGroup;
 			children = (
 				938AF0E12AEB152A000BB4C5 /* ContentView.swift */,
+				932349542B0031250088F22E /* DataAssistView.swift */,
+				932349582B081CB40088F22E /* OrderListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		938AF0EE2AEB1C15000BB4C5 /* DataModels */ = {
+		938AF0EE2AEB1C15000BB4C5 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
 				938AF0EF2AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld */,
+				9323494C2AFEF7590088F22E /* CDDataController.swift */,
 			);
-			path = DataModels;
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,10 +202,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932349572B02D0B80088F22E /* OrderItemData.json in Resources */,
 				938AF0E72AEB152C000BB4C5 /* Preview Assets.xcassets in Resources */,
+				932349432AFDA5D20088F22E /* NOTES in Resources */,
+				932349512AFEFF880088F22E /* ItemData.json in Resources */,
 				938AF0E42AEB152C000BB4C5 /* Assets.xcassets in Resources */,
 				932349412AF6F5020088F22E /* OrderData2 in Resources */,
-				9323493D2AF6E5430088F22E /* OrderData.json in Resources */,
+				9323495D2B0AC71B0088F22E /* InsuranceData.json in Resources */,
+				9323493D2AF6E5430088F22E /* OrderListData.json in Resources */,
+				932349492AFEE36F0088F22E /* DoctorData.json in Resources */,
+				932349532AFF03B20088F22E /* OrderData.json in Resources */,
+				9323494B2AFEEA710088F22E /* PatientData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,10 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9323494D2AFEF75A0088F22E /* CDDataController.swift in Sources */,
+				932349592B081CB40088F22E /* OrderListView.swift in Sources */,
 				938AF0E22AEB152A000BB4C5 /* ContentView.swift in Sources */,
 				938AF0F12AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld in Sources */,
+				932349552B0031250088F22E /* DataAssistView.swift in Sources */,
 				938AF0E02AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift in Sources */,
 				9323493F2AF6E6730088F22E /* JsonDataHelper.swift in Sources */,
+				932349472AFEDC8E0088F22E /* JsonStructs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

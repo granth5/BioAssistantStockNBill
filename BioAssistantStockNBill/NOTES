@@ -1,0 +1,23 @@
+
+* START:
+- Use CoreData, preloaded from JSON
+    - will use API calls to get SAME data later
+
+
+OBJECTS:
+- PatientInfo
+- Insurance
+- Doctor
+
+- Item
+
+- Order
+- OrderItem
+
+
+*** QUESTIONS ***
+1 - ONLY new patient / order info?
+    - static (for iPad) tables:
+        - Doctors
+        - Insurances
+        - Items

@@ -1,0 +1,23 @@
+
+[
+    {
+        "insuranceId": 1,
+        "orderId": 0,   // used???
+        "patientId": 0, // used???
+        "insuranceName": "Blue Cros Blue Shield MI",
+        "insuranceType": "BC",
+        "policyId": "123",
+        "policyGroup": "PolGrp1",
+        "diagnosis": "DX123"
+    },
+    {
+        "insuranceId": 2,
+        "orderId": 0,   // used???
+        "patientId": 0, // used???
+        "insuranceName": "Health Alliance Plan (HAP)",
+        "insuranceType": "HAP",
+        "policyId": "456",
+        "policyGroup": "PolGrp2",
+        "diagnosis": "DX456"
+    }
+]

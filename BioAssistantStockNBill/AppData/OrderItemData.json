@@ -1,0 +1,20 @@
+[
+    {
+        "orderItemId": 1,
+        "orderId": 1,
+        "itemId": 1,
+        "quantity": 11
+    },
+    {
+        "orderItemId": 2,
+        "orderId": 1,
+        "itemId": 3,
+        "quantity": 22
+    },
+    {
+        "orderItemId": 3,
+        "orderId": 2,
+        "itemId": 2,
+        "quantity": 33
+    }
+]
