@@ -15,6 +15,7 @@ class JsonDataHelper: ObservableObject {
     @Published var doctors = [DoctorJ]()
     @Published var patients = [PatientJ]()
     @Published var items = [ItemJ]()
+    @Published var insurances = [InsuranceJ]()
     
     init() {
         //loadData()
@@ -34,8 +35,10 @@ class JsonDataHelper: ObservableObject {
         }
         
         // fetch insurances
-        let decodedIns: [Insurance]
-        
+        let decodedIns: [InsuranceJ]? = decode("InsuranceData", type: [InsuranceJ].self)
+        if decodedIns != nil {
+            insurances = decodedIns!
+        }
         // fetch patients
         let decodedPatients: [PatientJ]? = decode("PatientData", type: [PatientJ].self)
         if decodedPatients != nil {

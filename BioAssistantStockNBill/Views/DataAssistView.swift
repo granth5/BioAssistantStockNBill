@@ -18,6 +18,7 @@ struct DataAssistView: View {
     
     @State var jsonLoaded: Bool = false
     @State var cdDataLoaded: Bool = false
+    @State var showingDelConfirm = false
     
     // 'Utility' view to do various data / backend related stuff
     //
@@ -34,13 +35,16 @@ struct DataAssistView: View {
     var body: some View {
         VStack {
             Label("TEST", systemImage: "bolt.fill")
+                .onAppear() {
+                    cdDataLoaded = cdDataController.cdDataLoaded
+                }
             VStack {
                 HStack {
                     Toggle("JSON Data Loaded", isOn: $jsonLoaded)
                         .frame(width: 250)
                         .padding()
                         .disabled(true)
-                    Toggle("CD Data Loaded", isOn: $cdDataController.cdDataLoaded)
+                    Toggle("CD Data Loaded", isOn: $cdDataLoaded)
                         .frame(width: 200)
                         .padding()
                         .disabled(true)
@@ -61,7 +65,8 @@ struct DataAssistView: View {
                     Button("Load CD Data", action: {
                         if !cdDataLoaded {
                             cdDataController.jsonHelper = jsonHelper
-                            cdDataController.test()
+                            cdDataController.loadCdDataFromJson()
+                            cdDataLoaded = self.cdDataController.cdDataLoaded
                         }
                     })
                     .frame(width: 200)
@@ -69,6 +74,22 @@ struct DataAssistView: View {
                     .buttonBorderShape(.roundedRectangle)
                     .padding()
 
+                    Button("Delete CD Data", action: {
+                            //cdDataController.jsonHelper = jsonHelper
+                        showingDelConfirm = true
+                            
+                    })
+                    .confirmationDialog("Are you sure?", isPresented: $showingDelConfirm) {
+                        Button("Delete ALL Data?", role: .destructive) {
+                            cdDataController.deleteAll()
+                            cdDataLoaded = self.cdDataController.cdDataLoaded
+                        }
+                    }
+                    .frame(width: 200)
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle)
+                    .padding()
+                    
                     Spacer()
                 }
             }
