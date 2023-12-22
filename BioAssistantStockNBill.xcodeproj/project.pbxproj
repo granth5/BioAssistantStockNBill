@@ -20,23 +20,29 @@
 		932349572B02D0B80088F22E /* OrderItemData.json in Resources */ = {isa = PBXBuildFile; fileRef = 932349562B02D0B80088F22E /* OrderItemData.json */; };
 		932349592B081CB40088F22E /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932349582B081CB40088F22E /* OrderListView.swift */; };
 		9323495D2B0AC71B0088F22E /* InsuranceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9323495C2B0AC71B0088F22E /* InsuranceData.json */; };
-		93234A132B117A460088F22E /* Patient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A072B117A460088F22E /* Patient+CoreDataClass.swift */; };
-		93234A142B117A460088F22E /* Patient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A082B117A460088F22E /* Patient+CoreDataProperties.swift */; };
-		93234A152B117A460088F22E /* Doctor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A092B117A460088F22E /* Doctor+CoreDataClass.swift */; };
-		93234A162B117A460088F22E /* Doctor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A0A2B117A460088F22E /* Doctor+CoreDataProperties.swift */; };
-		93234A172B117A460088F22E /* Insurance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A0B2B117A460088F22E /* Insurance+CoreDataClass.swift */; };
-		93234A182B117A460088F22E /* Insurance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A0C2B117A460088F22E /* Insurance+CoreDataProperties.swift */; };
-		93234A192B117A460088F22E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A0D2B117A460088F22E /* Item+CoreDataClass.swift */; };
-		93234A1A2B117A460088F22E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A0E2B117A460088F22E /* Item+CoreDataProperties.swift */; };
-		93234A1B2B117A460088F22E /* OrderItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A0F2B117A460088F22E /* OrderItem+CoreDataClass.swift */; };
-		93234A1C2B117A460088F22E /* OrderItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A102B117A460088F22E /* OrderItem+CoreDataProperties.swift */; };
-		93234A1D2B117A460088F22E /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A112B117A460088F22E /* Order+CoreDataClass.swift */; };
-		93234A1E2B117A460088F22E /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93234A122B117A460088F22E /* Order+CoreDataProperties.swift */; };
+		9386812F2B23D01800968920 /* CDDataControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386812E2B23D01800968920 /* CDDataControllerEx.swift */; };
 		938AF0E02AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */; };
 		938AF0E22AEB152A000BB4C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0E12AEB152A000BB4C5 /* ContentView.swift */; };
 		938AF0E42AEB152C000BB4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938AF0E32AEB152C000BB4C5 /* Assets.xcassets */; };
 		938AF0E72AEB152C000BB4C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938AF0E62AEB152C000BB4C5 /* Preview Assets.xcassets */; };
 		938AF0F12AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 938AF0EF2AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld */; };
+		938EE9F82B152155006BB9EC /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EE9F72B152155006BB9EC /* EditView.swift */; };
+		938EE9FA2B1523CA006BB9EC /* EditView_Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EE9F92B1523CA006BB9EC /* EditView_Patient.swift */; };
+		938EE9FC2B152422006BB9EC /* EditView_Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EE9FB2B152422006BB9EC /* EditView_Items.swift */; };
+		938EEA012B1A9A70006BB9EC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EEA002B1A9A70006BB9EC /* Helpers.swift */; };
+		93D6970C2B2D2A0200B837F3 /* Doctor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697002B2D2A0200B837F3 /* Doctor+CoreDataClass.swift */; };
+		93D6970D2B2D2A0200B837F3 /* Doctor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697012B2D2A0200B837F3 /* Doctor+CoreDataProperties.swift */; };
+		93D6970E2B2D2A0200B837F3 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697022B2D2A0200B837F3 /* Item+CoreDataClass.swift */; };
+		93D6970F2B2D2A0200B837F3 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697032B2D2A0200B837F3 /* Item+CoreDataProperties.swift */; };
+		93D697102B2D2A0200B837F3 /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697042B2D2A0200B837F3 /* Order+CoreDataClass.swift */; };
+		93D697112B2D2A0200B837F3 /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697052B2D2A0200B837F3 /* Order+CoreDataProperties.swift */; };
+		93D697122B2D2A0200B837F3 /* OrderItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697062B2D2A0200B837F3 /* OrderItem+CoreDataClass.swift */; };
+		93D697132B2D2A0200B837F3 /* OrderItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697072B2D2A0200B837F3 /* OrderItem+CoreDataProperties.swift */; };
+		93D697142B2D2A0200B837F3 /* Insurance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697082B2D2A0200B837F3 /* Insurance+CoreDataClass.swift */; };
+		93D697152B2D2A0200B837F3 /* Insurance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697092B2D2A0200B837F3 /* Insurance+CoreDataProperties.swift */; };
+		93D697162B2D2A0200B837F3 /* Patient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D6970A2B2D2A0200B837F3 /* Patient+CoreDataClass.swift */; };
+		93D697172B2D2A0200B837F3 /* Patient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D6970B2B2D2A0200B837F3 /* Patient+CoreDataProperties.swift */; };
+		93D697192B36113600B837F3 /* OrderListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D697182B36113600B837F3 /* OrderListView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,24 +59,30 @@
 		932349562B02D0B80088F22E /* OrderItemData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderItemData.json; sourceTree = "<group>"; };
 		932349582B081CB40088F22E /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		9323495C2B0AC71B0088F22E /* InsuranceData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InsuranceData.json; sourceTree = "<group>"; };
-		93234A072B117A460088F22E /* Patient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		93234A082B117A460088F22E /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		93234A092B117A460088F22E /* Doctor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		93234A0A2B117A460088F22E /* Doctor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		93234A0B2B117A460088F22E /* Insurance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insurance+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		93234A0C2B117A460088F22E /* Insurance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insurance+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		93234A0D2B117A460088F22E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		93234A0E2B117A460088F22E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		93234A0F2B117A460088F22E /* OrderItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		93234A102B117A460088F22E /* OrderItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		93234A112B117A460088F22E /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		93234A122B117A460088F22E /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9386812E2B23D01800968920 /* CDDataControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDataControllerEx.swift; sourceTree = "<group>"; };
 		938AF0DC2AEB152A000BB4C5 /* BioAssistantStockNBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioAssistantStockNBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAssistantStockNBillApp.swift; sourceTree = "<group>"; };
 		938AF0E12AEB152A000BB4C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		938AF0E32AEB152C000BB4C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		938AF0E62AEB152C000BB4C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		938AF0F02AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BioAssistDataModel.xcdatamodel; sourceTree = "<group>"; };
+		938EE9F72B152155006BB9EC /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		938EE9F92B1523CA006BB9EC /* EditView_Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView_Patient.swift; sourceTree = "<group>"; };
+		938EE9FB2B152422006BB9EC /* EditView_Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView_Items.swift; sourceTree = "<group>"; };
+		938EEA002B1A9A70006BB9EC /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		93D697002B2D2A0200B837F3 /* Doctor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93D697012B2D2A0200B837F3 /* Doctor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93D697022B2D2A0200B837F3 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93D697032B2D2A0200B837F3 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93D697042B2D2A0200B837F3 /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93D697052B2D2A0200B837F3 /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93D697062B2D2A0200B837F3 /* OrderItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93D697072B2D2A0200B837F3 /* OrderItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93D697082B2D2A0200B837F3 /* Insurance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insurance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93D697092B2D2A0200B837F3 /* Insurance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insurance+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93D6970A2B2D2A0200B837F3 /* Patient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93D6970B2B2D2A0200B837F3 /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93D697182B36113600B837F3 /* OrderListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,18 +122,18 @@
 		932349D62B11670F0088F22E /* CDGenerated */ = {
 			isa = PBXGroup;
 			children = (
-				93234A072B117A460088F22E /* Patient+CoreDataClass.swift */,
-				93234A082B117A460088F22E /* Patient+CoreDataProperties.swift */,
-				93234A092B117A460088F22E /* Doctor+CoreDataClass.swift */,
-				93234A0A2B117A460088F22E /* Doctor+CoreDataProperties.swift */,
-				93234A0B2B117A460088F22E /* Insurance+CoreDataClass.swift */,
-				93234A0C2B117A460088F22E /* Insurance+CoreDataProperties.swift */,
-				93234A0D2B117A460088F22E /* Item+CoreDataClass.swift */,
-				93234A0E2B117A460088F22E /* Item+CoreDataProperties.swift */,
-				93234A0F2B117A460088F22E /* OrderItem+CoreDataClass.swift */,
-				93234A102B117A460088F22E /* OrderItem+CoreDataProperties.swift */,
-				93234A112B117A460088F22E /* Order+CoreDataClass.swift */,
-				93234A122B117A460088F22E /* Order+CoreDataProperties.swift */,
+				93D697002B2D2A0200B837F3 /* Doctor+CoreDataClass.swift */,
+				93D697012B2D2A0200B837F3 /* Doctor+CoreDataProperties.swift */,
+				93D697022B2D2A0200B837F3 /* Item+CoreDataClass.swift */,
+				93D697032B2D2A0200B837F3 /* Item+CoreDataProperties.swift */,
+				93D697042B2D2A0200B837F3 /* Order+CoreDataClass.swift */,
+				93D697052B2D2A0200B837F3 /* Order+CoreDataProperties.swift */,
+				93D697062B2D2A0200B837F3 /* OrderItem+CoreDataClass.swift */,
+				93D697072B2D2A0200B837F3 /* OrderItem+CoreDataProperties.swift */,
+				93D697082B2D2A0200B837F3 /* Insurance+CoreDataClass.swift */,
+				93D697092B2D2A0200B837F3 /* Insurance+CoreDataProperties.swift */,
+				93D6970A2B2D2A0200B837F3 /* Patient+CoreDataClass.swift */,
+				93D6970B2B2D2A0200B837F3 /* Patient+CoreDataProperties.swift */,
 			);
 			path = CDGenerated;
 			sourceTree = "<group>";
@@ -145,6 +157,7 @@
 		938AF0DE2AEB152A000BB4C5 /* BioAssistantStockNBill */ = {
 			isa = PBXGroup;
 			children = (
+				938EE9FF2B1A9A5C006BB9EC /* Helpers */,
 				938AF0DF2AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift */,
 				9323493B2AF6E4F60088F22E /* AppData */,
 				932349342AF442940088F22E /* ViewModels */,
@@ -171,6 +184,10 @@
 				938AF0E12AEB152A000BB4C5 /* ContentView.swift */,
 				932349542B0031250088F22E /* DataAssistView.swift */,
 				932349582B081CB40088F22E /* OrderListView.swift */,
+				938EE9F72B152155006BB9EC /* EditView.swift */,
+				938EE9F92B1523CA006BB9EC /* EditView_Patient.swift */,
+				938EE9FB2B152422006BB9EC /* EditView_Items.swift */,
+				93D697182B36113600B837F3 /* OrderListView2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,8 +198,17 @@
 				932349D62B11670F0088F22E /* CDGenerated */,
 				938AF0EF2AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld */,
 				9323494C2AFEF7590088F22E /* CDDataController.swift */,
+				9386812E2B23D01800968920 /* CDDataControllerEx.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		938EE9FF2B1A9A5C006BB9EC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				938EEA002B1A9A70006BB9EC /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,26 +289,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93234A192B117A460088F22E /* Item+CoreDataClass.swift in Sources */,
 				9323494D2AFEF75A0088F22E /* CDDataController.swift in Sources */,
-				93234A1A2B117A460088F22E /* Item+CoreDataProperties.swift in Sources */,
-				93234A1B2B117A460088F22E /* OrderItem+CoreDataClass.swift in Sources */,
 				932349592B081CB40088F22E /* OrderListView.swift in Sources */,
+				93D697142B2D2A0200B837F3 /* Insurance+CoreDataClass.swift in Sources */,
 				938AF0E22AEB152A000BB4C5 /* ContentView.swift in Sources */,
+				938EE9FC2B152422006BB9EC /* EditView_Items.swift in Sources */,
+				93D6970C2B2D2A0200B837F3 /* Doctor+CoreDataClass.swift in Sources */,
 				938AF0F12AEB239C000BB4C5 /* BioAssistDataModel.xcdatamodeld in Sources */,
-				93234A152B117A460088F22E /* Doctor+CoreDataClass.swift in Sources */,
+				93D697162B2D2A0200B837F3 /* Patient+CoreDataClass.swift in Sources */,
+				93D6970E2B2D2A0200B837F3 /* Item+CoreDataClass.swift in Sources */,
+				93D697132B2D2A0200B837F3 /* OrderItem+CoreDataProperties.swift in Sources */,
+				93D697152B2D2A0200B837F3 /* Insurance+CoreDataProperties.swift in Sources */,
 				932349552B0031250088F22E /* DataAssistView.swift in Sources */,
 				938AF0E02AEB152A000BB4C5 /* BioAssistantStockNBillApp.swift in Sources */,
-				93234A1D2B117A460088F22E /* Order+CoreDataClass.swift in Sources */,
-				93234A142B117A460088F22E /* Patient+CoreDataProperties.swift in Sources */,
-				93234A1E2B117A460088F22E /* Order+CoreDataProperties.swift in Sources */,
-				93234A162B117A460088F22E /* Doctor+CoreDataProperties.swift in Sources */,
+				938EE9F82B152155006BB9EC /* EditView.swift in Sources */,
+				938EEA012B1A9A70006BB9EC /* Helpers.swift in Sources */,
+				93D697122B2D2A0200B837F3 /* OrderItem+CoreDataClass.swift in Sources */,
 				9323493F2AF6E6730088F22E /* JsonDataHelper.swift in Sources */,
-				93234A1C2B117A460088F22E /* OrderItem+CoreDataProperties.swift in Sources */,
-				93234A182B117A460088F22E /* Insurance+CoreDataProperties.swift in Sources */,
-				93234A132B117A460088F22E /* Patient+CoreDataClass.swift in Sources */,
-				93234A172B117A460088F22E /* Insurance+CoreDataClass.swift in Sources */,
+				938EE9FA2B1523CA006BB9EC /* EditView_Patient.swift in Sources */,
 				932349472AFEDC8E0088F22E /* JsonStructs.swift in Sources */,
+				9386812F2B23D01800968920 /* CDDataControllerEx.swift in Sources */,
+				93D697112B2D2A0200B837F3 /* Order+CoreDataProperties.swift in Sources */,
+				93D697172B2D2A0200B837F3 /* Patient+CoreDataProperties.swift in Sources */,
+				93D6970F2B2D2A0200B837F3 /* Item+CoreDataProperties.swift in Sources */,
+				93D697102B2D2A0200B837F3 /* Order+CoreDataClass.swift in Sources */,
+				93D697192B36113600B837F3 /* OrderListView2.swift in Sources */,
+				93D6970D2B2D2A0200B837F3 /* Doctor+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,63 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="Doctor" representedClassName="Doctor" syncable="YES">
-        <attribute name="address1" optional="YES" attributeType="String"/>
-        <attribute name="address2" optional="YES" attributeType="String"/>
-        <attribute name="city" optional="YES" attributeType="String"/>
-        <attribute name="doctorId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="npiNumber" optional="YES" attributeType="String"/>
-        <attribute name="phone" optional="YES" attributeType="String"/>
-        <attribute name="state" optional="YES" attributeType="String"/>
-        <attribute name="zip" optional="YES" attributeType="String"/>
-        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="doctor" inverseEntity="Patient"/>
+        <attribute name="address1" attributeType="String" defaultValueString=""/>
+        <attribute name="address2" attributeType="String"/>
+        <attribute name="city" attributeType="String" defaultValueString=""/>
+        <attribute name="doctorId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="npiNumber" attributeType="String" defaultValueString=""/>
+        <attribute name="phone" attributeType="String" defaultValueString=""/>
+        <attribute name="state" attributeType="String" defaultValueString=""/>
+        <attribute name="zip" attributeType="String" defaultValueString=""/>
     </entity>
     <entity name="Insurance" representedClassName="Insurance" syncable="YES">
-        <attribute name="diagnosis" optional="YES" attributeType="String"/>
-        <attribute name="insuranceId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="insuranceName" optional="YES" attributeType="String"/>
-        <attribute name="insuranceType" optional="YES" attributeType="String"/>
-        <attribute name="orderId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="patientId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="policyGroup" optional="YES" attributeType="String"/>
-        <attribute name="policyId" optional="YES" attributeType="String"/>
-        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="insurances" inverseEntity="Patient"/>
+        <attribute name="diagnosis" attributeType="String" defaultValueString=""/>
+        <attribute name="insuranceId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="insuranceName" attributeType="String" defaultValueString=""/>
+        <attribute name="insuranceType" attributeType="String" defaultValueString=""/>
+        <attribute name="orderId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="patientId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="policyGroup" attributeType="String" defaultValueString=""/>
+        <attribute name="policyId" attributeType="String" defaultValueString=""/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
-        <attribute name="itemDescription" optional="YES" attributeType="String"/>
-        <attribute name="itemId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="lCode" optional="YES" attributeType="String"/>
-        <relationship name="orderItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrderItem" inverseName="item" inverseEntity="OrderItem"/>
+        <attribute name="itemDescription" attributeType="String" defaultValueString=""/>
+        <attribute name="itemId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lCode" attributeType="String" defaultValueString=""/>
     </entity>
     <entity name="Order" representedClassName="Order" syncable="YES">
-        <attribute name="orderDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="orderId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="patientId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="orderItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderItem" inverseName="order" inverseEntity="OrderItem"/>
-        <relationship name="patient" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="orders" inverseEntity="Patient"/>
+        <attribute name="orderDate" optional="YES" attributeType="Date" defaultDateTimeInterval="-1609375380" usesScalarValueType="NO"/>
+        <attribute name="orderId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="patientId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="OrderItem" representedClassName="OrderItem" syncable="YES">
-        <attribute name="itemId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="orderId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="orderItemId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="orderItem" inverseEntity="Item"/>
-        <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="orderItems" inverseEntity="Order"/>
+        <attribute name="itemId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="orderId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="orderItemId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quantity" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES">
-        <attribute name="address1" optional="YES" attributeType="String"/>
-        <attribute name="address2" optional="YES" attributeType="String"/>
-        <attribute name="city" optional="YES" attributeType="String"/>
-        <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="firstName" optional="YES" attributeType="String"/>
-        <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="lastName" optional="YES" attributeType="String"/>
-        <attribute name="patientId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String"/>
-        <attribute name="state" optional="YES" attributeType="String"/>
-        <attribute name="zip" optional="YES" attributeType="String"/>
-        <relationship name="doctor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctor" inverseName="patient" inverseEntity="Doctor"/>
-        <relationship name="insurances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Insurance" inverseName="patient" inverseEntity="Insurance"/>
-        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="patient" inverseEntity="Order"/>
+        <attribute name="address1" attributeType="String" defaultValueString=""/>
+        <attribute name="address2" attributeType="String" defaultValueString=""/>
+        <attribute name="city" attributeType="String" defaultValueString=""/>
+        <attribute name="dateOfBirth" attributeType="Date" defaultDateTimeInterval="723251940" usesScalarValueType="NO"/>
+        <attribute name="doctorId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="firstName" attributeType="String" defaultValueString=""/>
+        <attribute name="gender" attributeType="String" defaultValueString=""/>
+        <attribute name="insuranceId1" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="insuranceId2" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastName" attributeType="String" defaultValueString=""/>
+        <attribute name="patientId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="phone" attributeType="String" defaultValueString=""/>
+        <attribute name="state" attributeType="String" defaultValueString=""/>
+        <attribute name="zip" attributeType="String" defaultValueString=""/>
     </entity>
 </model>

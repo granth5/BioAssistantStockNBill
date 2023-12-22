@@ -2,7 +2,7 @@
 //  Doctor+CoreDataProperties.swift
 //  BioAssistantStockNBill
 //
-//  Created by Grant on 11/24/23.
+//  Created by Grant on 12/15/23.
 //
 //
 
@@ -25,7 +25,6 @@ extension Doctor {
     @NSManaged public var phone: String?
     @NSManaged public var state: String?
     @NSManaged public var zip: String?
-    @NSManaged public var patient: Patient?
 
 }
 

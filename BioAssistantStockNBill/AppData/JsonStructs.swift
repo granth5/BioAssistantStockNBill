@@ -1,3 +1,6 @@
+
+
+
 //
 //  JsonStructs.swift
 //  BioAssistantStockNBill
@@ -7,8 +10,31 @@
 
 import Foundation
 
+// struct for indiv. order
+struct OrderEditInfo {
+    var id = UUID()
+    var orderInfo: OrderJ = OrderJ()
+    var patientInfo: OrderPatientInfo = OrderPatientInfo()
+    var orderItems: [OrderItemInfo] = [OrderItemInfo]()
+}
+
+struct OrderItemInfo {
+    var orderItemId: Int32 = 0  // used for sort
+    var itemName: String = ""
+    var lCode: String = ""
+    var quantity: Int32 = 0
+}
+
+struct OrderPatientInfo {
+    var patient: PatientJ = PatientJ()
+    var doctor: DoctorJ = DoctorJ()
+    var insurance1: InsuranceJ = InsuranceJ()
+    var insurance2: InsuranceJ = InsuranceJ()
+}
+
 // structs for raw/POC stuff
 struct OrderListOrderJ: Codable, Identifiable {
+
     enum CodingKeys: CodingKey {
         case orderId
         case orderDate
@@ -19,12 +45,28 @@ struct OrderListOrderJ: Codable, Identifiable {
     }
     
     var id = UUID()
-    var orderId: Int
+    var orderId: Int32
     var orderDate: Date
     var lastName: String
     var firstName: String
     var insuranceType: String
     var insuranceName: String
+    
+    init(
+        orderId: Int32 = 0,
+        orderDate: Date = Date(),
+        lastName: String = "",
+        firstName: String = "",
+        insuranceType: String = "",
+        insuranceName: String = ""
+    ) {
+        self.orderId = orderId
+        self.orderDate = orderDate
+        self.lastName = lastName
+        self.firstName = firstName
+        self.insuranceType = insuranceType
+        self.insuranceName = insuranceName
+    }
 }
 
 
@@ -37,9 +79,15 @@ struct OrderJ: Codable, Identifiable {
             patientId
     }
     
-    var orderId: Int
+    var orderId: Int32
     var orderDate: Date
-    var patientId: Int
+    var patientId: Int32
+    
+    init(orderId: Int32 = 0, patientId: Int32 = 0, orderDate: Date = Date()) {
+        self.orderId = orderId
+        self.patientId = patientId
+        self.orderDate = orderDate
+    }
 }
 
 struct OrderItemJ: Codable, Identifiable {
@@ -52,10 +100,22 @@ struct OrderItemJ: Codable, Identifiable {
             quantity
     }
     
-    var itemId: Int
-    var orderId: Int
-    var orderItemId: Int
-    var quantity: Int
+    var itemId: Int32
+    var orderId: Int32
+    var orderItemId: Int32
+    var quantity: Int32
+    
+    init (
+        itemId: Int32 = 0,
+        orderId: Int32 = 0,
+        orderItemId: Int32 = 0,
+        quantity: Int32 = 0
+    ) {
+        self.itemId = itemId
+        self.orderId = orderId
+        self.orderItemId = orderItemId
+        self.quantity = quantity
+    }
 }
 
 struct ItemJ: Codable, Identifiable {
@@ -67,9 +127,19 @@ struct ItemJ: Codable, Identifiable {
              lCode
     }
     
-    var itemId: Int
+    var itemId: Int32 = 0
     var itemDescription: String
     var lCode: String
+    
+    init (
+        itemId: Int32 = 0,
+        itemDescription: String = "",
+        lCode: String = ""
+    ) {
+        self.itemId = itemId
+        self.itemDescription = itemDescription
+        self.lCode = lCode
+    }
 }
 
 struct PatientJ: Codable, Identifiable {
@@ -86,10 +156,13 @@ struct PatientJ: Codable, Identifiable {
          zip,
          phone,
          gender,
-         dateOfBirth
+         dateOfBirth,
+         doctorId,
+         insuranceId1,
+         insuranceId2
     }
     
-    var patientId: Int
+    var patientId: Int32
     var lastName: String
     var firstName: String
     var address1: String
@@ -100,6 +173,41 @@ struct PatientJ: Codable, Identifiable {
     var phone: String
     var gender: String
     var dateOfBirth: Date
+    var doctorId: Int32
+    var insuranceId1: Int32
+    var insuranceId2: Int32
+    
+    init(
+        patientId: Int32 = 0,
+        lastName: String = "",
+        firstName: String = "",
+        address1: String = "",
+        address2: String = "",
+        city: String = "",
+        state: String = "",
+        zip: String = "",
+        phone: String = "",
+        gender: String = "",
+        dateOfBirth: Date = Date(),
+        doctorId: Int32 = 0,
+        insuranceId1: Int32 = 0,
+        insuranceId2: Int32 = 0
+    ) {
+        self.patientId = patientId
+        self.lastName = lastName
+        self.firstName = firstName
+        self.address1 = address1
+        self.address2 = address2
+        self.city = city
+        self.state = state
+        self.zip = zip
+        self.phone = phone
+        self.gender = gender
+        self.dateOfBirth = dateOfBirth
+        self.doctorId = doctorId
+        self.insuranceId1 = insuranceId1
+        self.insuranceId2 = insuranceId2
+    }
 }
 
 struct DoctorJ: Codable, Identifiable {
@@ -107,8 +215,7 @@ struct DoctorJ: Codable, Identifiable {
     
     private enum CodingKeys: String, CodingKey {
         case doctorId,
-        lastName,
-        firstName,
+        name,
         address1,
         address2,
         city,
@@ -118,9 +225,8 @@ struct DoctorJ: Codable, Identifiable {
         npiNumber
     }
 
-    var doctorId: Int
-    var lastName: String
-    var firstName: String
+    var doctorId: Int32
+    var name: String
     var address1: String
     var address2: String
     var city: String
@@ -128,6 +234,28 @@ struct DoctorJ: Codable, Identifiable {
     var zip: String
     var phone: String
     var npiNumber: String
+    
+    init(
+        doctorId: Int32 = 0,
+        name: String = "",
+        address1: String = "",
+        address2: String = "",
+        city: String = "",
+        state: String = "",
+        zip: String = "",
+        phone: String = "",
+        npiNumber: String = ""
+    ) {
+        self.doctorId = doctorId
+        self.name = name
+        self.address1 = address1
+        self.address2 = address2
+        self.city = city
+        self.state = state
+        self.zip = zip
+        self.phone = phone
+        self.npiNumber = npiNumber
+    }
     
 }
 
@@ -140,17 +268,29 @@ struct InsuranceJ: Codable, Identifiable {
         insuranceType,
         policyId,
         policyGroupId,
-        diagnosis,
-        orderId,
-        patientId
+        diagnosis
     }
     
-    var insuranceId: Int
+    var insuranceId: Int32
     var insuranceName: String
     var insuranceType: String
     var policyId: String
     var policyGroupId: String
     var diagnosis: String
-    var orderId: Int
-    var patientId: Int
+    
+    init (
+        insuranceId: Int32 = 0,
+        insuranceName: String = "",
+        insuranceType: String = "",
+        policyId: String = "",
+        policyGroupId: String = "",
+        diagnosis: String = ""
+    ) {
+        self.insuranceId = insuranceId
+        self.insuranceName = insuranceName
+        self.insuranceType = insuranceType
+        self.policyId = policyId
+        self.policyGroupId = policyGroupId
+        self.diagnosis = diagnosis
+    }
 }

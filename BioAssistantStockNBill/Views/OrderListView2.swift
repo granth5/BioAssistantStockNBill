@@ -13,10 +13,14 @@ private let dateFormatter: DateFormatter = {
     return formatter
 }()
 
-struct OrderListView: View {
+struct OrderListView2: View {
     @EnvironmentObject var cdDatataController: CDDataController
     @State var orderList = [OrderListOrderJ]()
     @State var orderToEdit = OrderEditInfo()
+    @State private var action: Int? = 0
+    @State private var selectedOrderId: Int32 = 0
+    @State private var editViewSelected: Bool = false
+    
     
 //    init() {
 //        orderList = cdDatataController.getOrderList()
@@ -27,7 +31,9 @@ struct OrderListView: View {
         NavigationView {
             
             VStack {
+
                 VStack {
+                    
                     
                     VStack {
                         HStack {
@@ -66,14 +72,15 @@ struct OrderListView: View {
                                             .frame(width: 100, height: 30)
                                             .border(.blue)
                                         
-                                        NavigationLink("Edit") {
-                                            EditView(passedOrderId: order.orderId)
+                                       
+                                        Text("Edit").onTapGesture {
+                                            selectedOrderId = order.orderId
+                                            self.editViewSelected = true
                                         }
                                         .frame(width: 75, height: 30)
                                         .border(.blue)
                                         .tint(.blue)
-                                        .buttonStyle(.borderedProminent)
-                                        
+
                                         Text("Delete").onTapGesture {
                                             print("**DELETE!!!**")
                                         }
@@ -104,44 +111,26 @@ struct OrderListView: View {
                     
                     Button("ADD") {
                         print("***ADD***")
-                        EditView(passedOrderId: 0)
+                        self.selectedOrderId = 0
+                        self.editViewSelected = true
                         
                     }
                     .buttonStyle(.bordered)
                     .tint(.blue)
                     
                 }
+                .sheet(isPresented: $editViewSelected) {
+                EditView(passedOrderId: selectedOrderId)
             }
-            .border(.blue)
-            .navigationViewStyle(StackNavigationViewStyle())
+        }
+        .border(.blue)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
         
 }
 
 
 #Preview {
-    OrderListView()
-}
-
-extension View {
-    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
-        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
-    }
-}
-
-struct EdgeBorder: Shape {
-    var width: CGFloat
-    var edges: [Edge]
-
-    func path(in rect: CGRect) -> Path {
-        edges.map { edge -> Path in
-            switch edge {
-            case .top: return Path(.init(x: rect.minX, y: rect.minY, width: rect.width, height: width))
-            case .bottom: return Path(.init(x: rect.minX, y: rect.maxY - width, width: rect.width, height: width))
-            case .leading: return Path(.init(x: rect.minX, y: rect.minY, width: width, height: rect.height))
-            case .trailing: return Path(.init(x: rect.maxX - width, y: rect.minY, width: width, height: rect.height))
-            }
-        }.reduce(into: Path()) { $0.addPath($1) }
-    }
+    OrderListView2()
 }
 

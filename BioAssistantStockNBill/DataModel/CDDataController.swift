@@ -14,12 +14,21 @@ import SwiftUI
 class CDDataController: ObservableObject {
     @Published var jsonHelper: JsonDataHelper
     
+    // singleton
+    static let shared = CDDataController()
+    
+    @Published var orders = [OrderJ]()
+    @Published var orderItems = [OrderItemJ]()
+    @Published var items = [ItemJ]()
+    @Published var patients = [PatientJ]()
+    @Published var insurances = [InsuranceJ]()
+    @Published var doctors = [DoctorJ]()
+    
     let container = NSPersistentContainer(name: "BioAssistDataModel")
     
     public var cdDataLoaded: Bool = false
+    public var storeLocation: String = ""
 
-    
-    
     init() {
         
         self.jsonHelper = JsonDataHelper()
@@ -29,23 +38,17 @@ class CDDataController: ObservableObject {
                 print("Failed to load \(error.localizedDescription)")
             }
             
-            // create new background context
-            let ctx = self.container.newBackgroundContext()
+            self.storeLocation = self.container.persistentStoreCoordinator.persistentStores.first?.url?.path ?? "NOT FOUND"
+            print("STORE FILE LOC: \(self.storeLocation)")
             
-            // if needed, ensure background ctx stays up
-            //  to date with changes from parent
-            ctx.automaticallyMergesChangesFromParent = true;
-
             do {
-                // create fetch req
-                //let fetchReq: NSFetchRequest<Patient>
-                let fetchReq: NSFetchRequest<Insurance>
+                let fetchReq: NSFetchRequest<Order>
 
-                //fetchReq = Patient.fetchRequest()
-                fetchReq = Insurance.fetchRequest()
+                fetchReq = Order.fetchRequest()
                 fetchReq.fetchLimit = 1
 
-                let objects = try ctx.fetch(fetchReq)
+                //let objects = try ctx.fetch(fetchReq)
+                let objects = try self.container.viewContext.fetch(fetchReq)
 
                 // if we got here, no problems
                 self.cdDataLoaded = !objects.isEmpty
@@ -55,147 +58,6 @@ class CDDataController: ObservableObject {
                 print("Error: " + error.localizedDescription)
             }
         }
-    }
-    
-    func deleteAll() {
-        let ctx = self.container.newBackgroundContext()
-        
-        // Doctor
-        let fetchReqDoc: NSFetchRequest<NSFetchRequestResult> = Doctor.fetchRequest()
-        let batchDelReqDoc = NSBatchDeleteRequest(fetchRequest: fetchReqDoc)
-        try? ctx.execute(batchDelReqDoc)
-        save(context: ctx)
-        
-        // Item
-        let fetchReqItem: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
-        let batchDelReqItem = NSBatchDeleteRequest(fetchRequest: fetchReqItem)
-        try? ctx.execute(batchDelReqItem)
-        save(context: ctx)
-        
-        // Insurance
-        let fetchReqIns: NSFetchRequest<NSFetchRequestResult> = Insurance.fetchRequest()
-        let batchDelReqIns = NSBatchDeleteRequest(fetchRequest: fetchReqIns)
-        try? ctx.execute(batchDelReqIns)
-        save(context: ctx)
-        
-        // Patients
-        let fetchReq: NSFetchRequest<NSFetchRequestResult> = Patient.fetchRequest()
-        let batchDeleteReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
-        try? ctx.execute(batchDeleteReq)
-        save(context: ctx)
-        
-        // OrderItem
-        let fetchReqOrderItem: NSFetchRequest<NSFetchRequestResult> = OrderItem.fetchRequest()
-        let batchDelReqOrderItem = NSBatchDeleteRequest(fetchRequest: fetchReqOrderItem)
-        try? ctx.execute(batchDelReqOrderItem)
-        save(context: ctx)
-        
-        // Order
-        let fetchReqOrder: NSFetchRequest<NSFetchRequestResult> = Order.fetchRequest()
-        let batchDelReqOrder = NSBatchDeleteRequest(fetchRequest: fetchReqOrder)
-        try? ctx.execute(batchDelReqOrder)
-        save(context: ctx)
-        
-        self.cdDataLoaded = false
-    }
-    
-    func loadCdDataFromJson() {
-        let ctx = self.container.newBackgroundContext()
-        
-        // Insurance
-        for ins in jsonHelper.insurances {
-            let cdIns = NSEntityDescription.insertNewObject(forEntityName: "Insurance", into: ctx) as! Insurance
-            
-            cdIns.insuranceId = Int32(ins.insuranceId)
-            cdIns.insuranceName = ins.insuranceName
-            cdIns.insuranceType = ins.insuranceType
-            cdIns.orderId = Int32(ins.orderId)
-            
-            cdIns.patientId = Int32(ins.patientId)
-            cdIns.policyId = ins.policyId
-            cdIns.policyGroup = ins.policyGroupId
-            cdIns.diagnosis = ins.diagnosis
-            
-            save(context: ctx)
-        }
-        
-        // Doctor
-        for doc in jsonHelper.doctors {
-            let cdDoc = NSEntityDescription.insertNewObject(forEntityName: "Doctor", into: ctx) as! Doctor
-            
-            cdDoc.doctorId = Int32(doc.doctorId)
-            cdDoc.name = doc.lastName + ", " + doc.firstName
-            cdDoc.address1 = doc.address1
-            cdDoc.address2 = doc.address2
-            cdDoc.city = doc.city
-            cdDoc.state = doc.state
-            cdDoc.zip = doc.zip
-            cdDoc.npiNumber = doc.npiNumber
-            
-            save(context: ctx)
-        }
-        
-
-
-        // Item
-        for item in jsonHelper.items {
-            let cdItem = NSEntityDescription.insertNewObject(forEntityName: "Item", into: ctx) as! Item
-            
-            cdItem.itemId = Int32(item.itemId)
-            cdItem.itemDescription = item.itemDescription
-            cdItem.lCode = item.lCode
-            
-            save(context: ctx)
-        }
-        
-        // Order
-        for order in jsonHelper.orders {
-            let cdOrder = NSEntityDescription.insertNewObject(forEntityName: "Order", into: ctx) as! Order
-            
-            cdOrder.orderId = Int32(order.orderId)
-            cdOrder.orderDate =  order.orderDate
-            cdOrder.patientId = Int32(order.patientId)
-            
-            // find and add patient
-            if let pat = jsonHelper.patients.first(where: {$0.patientId == order.patientId}) {
-
-                // Patient
-                let cdPatient = NSEntityDescription.insertNewObject(forEntityName: "Patient", into: ctx) as! Patient
-                    
-                cdPatient.patientId = Int32(pat.patientId)
-                cdPatient.lastName = pat.lastName
-                cdPatient.firstName = pat.firstName
-                cdPatient.address1 = pat.address1
-                cdPatient.address2 = pat.address2
-                cdPatient.city = pat.city
-                cdPatient.state = pat.state
-                cdPatient.zip = pat.zip
-                cdPatient.phone = pat.phone
-                cdPatient.dateOfBirth = pat.dateOfBirth
-                cdPatient.gender = pat.gender
-                
-                cdOrder.patient = cdPatient
-
-            } else {
-                print("Patient Save Error")
-            }
-
-            save(context: ctx)        }
-        
-        // OrderItem
-        for orderItem in jsonHelper.orderItems {
-            let cdOrderItem = NSEntityDescription.insertNewObject(forEntityName: "OrderItem", into: ctx) as! OrderItem
-            
-            cdOrderItem.orderItemId = Int32(orderItem.orderItemId)
-            cdOrderItem.orderId = Int32(orderItem.orderId)
-            cdOrderItem.itemId = Int32(orderItem.itemId)
-            cdOrderItem.quantity = Int32(orderItem.quantity)
-            
-            save(context: ctx)
-        }
-        
-        
-        self.cdDataLoaded = true
     }
     
     func  test() {
@@ -212,6 +74,141 @@ class CDDataController: ObservableObject {
         }
     }
     
+    func fetch<T:NSFetchRequestResult>(entity: String) throws -> [T] {
+        let request = NSFetchRequest<T>(entityName: entity)
+        let entities = try self.container.viewContext.fetch(request)
+        return entities
+    }
+   
+    func getOrderList() -> [OrderListOrderJ] {
+        var retVal = [OrderListOrderJ]()
+        
+        
+        
+        for order in self.orders {
+            var newListItem = OrderListOrderJ()
+            newListItem.orderId = order.orderId
+            newListItem.orderDate = order.orderDate
+            
+            let orderPatient: PatientJ = self.getPatientJ(patientId: order.patientId)
+            newListItem.lastName = orderPatient.lastName
+            newListItem.firstName = orderPatient.firstName
+            
+            let orderIns: InsuranceJ = self.getInsuranceJ(insuranceId: orderPatient.insuranceId1)
+            newListItem.insuranceType = orderIns.insuranceType
+            newListItem.insuranceName = orderIns.insuranceName
+            
+            retVal.append(newListItem)
+        }
+        
+        return retVal
+    }
+    
+    func getOrderEditInfo(orderId: Int32) -> OrderEditInfo {
+        var retVal = OrderEditInfo(orderInfo: OrderJ(),
+                                   patientInfo: OrderPatientInfo(
+                                                    patient: PatientJ(),
+                                                    doctor: DoctorJ(),
+                                                    insurance1: InsuranceJ(),
+                                                    insurance2: InsuranceJ()),
+                                   orderItems: [OrderItemInfo]())
+        if orderId > 0 {
+            let orderInfoJ = self.getOrderJ(orderId: orderId)
+            retVal.orderInfo = orderInfoJ
+            
+            retVal.patientInfo = self.getOrderEditPatientInfo(patientId: orderInfoJ.patientId)
+            
+            retVal.orderItems = self.getOrderEditItems(orderId: orderInfoJ.orderId)
+
+        }
+        
+        return retVal
+    }
+    
+    func getOrderEditItems(orderId: Int32) -> [OrderItemInfo] {
+        var retVal = [OrderItemInfo]()
+        
+        for orderItem in self.orderItems {
+            if orderItem.orderId == orderId {
+                var item = self.getItemJ(itemId: orderItem.itemId)
+                var newOrderItem = OrderItemInfo(
+                                            orderItemId: Int32(orderItem.orderItemId),
+                                            itemName: item.itemDescription,
+                                            lCode: item.lCode,
+                                            quantity: Int32(orderItem.quantity))
+                
+                retVal.append(newOrderItem)
+            }
+        }
+
+        return retVal
+    }
+    
+    func getOrderEditPatientInfo(patientId: Int32) -> OrderPatientInfo {
+        var retVal = OrderPatientInfo(
+                        patient: PatientJ(),
+                        doctor: DoctorJ(),
+                        insurance1: InsuranceJ(),
+                        insurance2: InsuranceJ())
+        
+        let patInfo = self.getPatientJ(patientId: patientId)
+        retVal.patient = patInfo
+        
+        retVal.insurance1 = self.getInsuranceJ(insuranceId: patInfo.insuranceId1)
+        retVal.doctor = self.getDoctorJ(doctorId: patInfo.doctorId)
+        
+        return retVal
+    }
     
    
+    func getOrderJ(orderId: Int32) -> OrderJ {
+        var retVal: OrderJ = OrderJ()
+        
+        if let ord = self.orders.first(where: {$0.orderId == orderId}) {
+            retVal = ord
+        }
+
+        return retVal
+    }
+    
+    func getPatientJ(patientId: Int32) -> PatientJ {
+        var retVal: PatientJ = PatientJ()
+        
+        if let pat = self.patients.first(where: {$0.patientId == patientId}) {
+            retVal = pat
+        }
+        
+        return retVal
+    }
+    
+    func getInsuranceJ(insuranceId: Int32) -> InsuranceJ {
+        var retVal: InsuranceJ = InsuranceJ()
+        
+        if let ins = self.insurances.first(where: {$0.insuranceId == insuranceId}) {
+            retVal = ins
+        }
+        
+        return retVal
+    }
+    
+    func getItemJ(itemId: Int32) -> ItemJ {
+        var retVal: ItemJ = ItemJ()
+        
+        if let itm = self.items.first(where: {$0.itemId == itemId}) {
+            retVal = itm
+        }
+        
+        return retVal
+    }
+    
+    func getDoctorJ(doctorId: Int32) -> DoctorJ {
+        var retVal: DoctorJ = DoctorJ()
+        
+        if let doc = self.doctors.first(where: {$0.doctorId == doctorId}) {
+            retVal = doc
+        }
+        
+        return retVal
+    }
+    
 }

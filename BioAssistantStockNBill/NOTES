@@ -21,3 +21,22 @@ OBJECTS:
         - Doctors
         - Insurances
         - Items
+        
+** 11/30/2023:
+Got the order list working, and start of edit screen, but running into multiple issues
+learning CoreData / SwiftUI - got passing objects around pretty good, but got carried
+away with passing CoreData controller everywhere, it was creating new / extra contexts
+all the time.
+
+SO - found good article from hackingwithswift.com on making a singleton struct to
+hold the context and putting it in the environment
+
+** 12/7/2023:
+More problems getting CD to work - signed up to hackingwithswift.com, found more stuff
+to try w/custom structs for the CD objects.
+
+Starting to lean toward keeping the CD stuff in independent tables - no relationships.
+Then make a custom data provider which reads the CD into object arrays - when anything's
+needed, simply build the object / list to return.
+
+

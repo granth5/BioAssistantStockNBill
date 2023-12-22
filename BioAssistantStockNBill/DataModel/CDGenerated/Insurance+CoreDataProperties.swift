@@ -2,7 +2,7 @@
 //  Insurance+CoreDataProperties.swift
 //  BioAssistantStockNBill
 //
-//  Created by Grant on 11/24/23.
+//  Created by Grant on 12/15/23.
 //
 //
 
@@ -24,7 +24,6 @@ extension Insurance {
     @NSManaged public var patientId: Int32
     @NSManaged public var policyGroup: String?
     @NSManaged public var policyId: String?
-    @NSManaged public var patient: Patient?
 
 }
 

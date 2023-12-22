@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct DataAssistView: View {
-    @ObservedObject var cdDataController: CDDataController
-    //@ObservedObject var jsonHelper: JsonDataHelper
-    
     @Environment(\.dismiss) private var dismiss
     @Environment(\.isPresented) private var isPresented
     
     @EnvironmentObject var jsonHelper: JsonDataHelper
+    @EnvironmentObject var cdDataController: CDDataController
     
     @State var jsonLoaded: Bool = false
     @State var cdDataLoaded: Bool = false
     @State var showingDelConfirm = false
+    
+    var storeLocation: String = ""
     
     // 'Utility' view to do various data / backend related stuff
     //
@@ -27,18 +27,22 @@ struct DataAssistView: View {
     //  - Unitialized (Sqlite DB empty)
     //  - Initialized (Sqlite DB empty)
     
-    init(cdDataController: CDDataController) {
-        self.cdDataController = cdDataController
-    }
-    
     
     var body: some View {
         VStack {
             Label("TEST", systemImage: "bolt.fill")
                 .onAppear() {
-                    cdDataLoaded = cdDataController.cdDataLoaded
+                    cdDataLoaded =  false //cdDataController.cdDataLoaded
                 }
             VStack {
+                HStack {
+                    Text("Data Store Loc: \(cdDataController.storeLocation)")
+                    .frame(width: 800)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .border(.blue)
+                    
+                }
                 HStack {
                     Toggle("JSON Data Loaded", isOn: $jsonLoaded)
                         .frame(width: 250)
@@ -66,7 +70,7 @@ struct DataAssistView: View {
                         if !cdDataLoaded {
                             cdDataController.jsonHelper = jsonHelper
                             cdDataController.loadCdDataFromJson()
-                            cdDataLoaded = self.cdDataController.cdDataLoaded
+                            cdDataLoaded = cdDataController.cdDataLoaded
                         }
                     })
                     .frame(width: 200)
@@ -90,23 +94,35 @@ struct DataAssistView: View {
                     .buttonBorderShape(.roundedRectangle)
                     .padding()
                     
+                    Button("Load Objects From CD Data", action: {
+                        cdDataController.loadDataFromCd()
+                    })
+                    .frame(width: 200)
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle)
+                    .padding()
+                    
+
                     Spacer()
                 }
             }
 
             Spacer()
         }
+        .onAppear() {
+            cdDataLoaded = self.cdDataController.cdDataLoaded
+        }
     }
 }
 
 struct DataAssistView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(cdDataController: CDDataController()).previewInterfaceOrientation(.landscapeLeft)
+        DataAssistView().previewInterfaceOrientation(.landscapeLeft)
     }
 }
 
 
 
 #Preview {
-    DataAssistView(cdDataController: CDDataController())
+    DataAssistView()
 }

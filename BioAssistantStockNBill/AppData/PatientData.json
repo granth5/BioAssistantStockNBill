@@ -10,7 +10,10 @@
         "zip": "48307",
         "phone": "111-222-3333",
         "dateOfBirth": "1980-01-15",
-        "gender": "M"
+        "gender": "M",
+        "doctorId": 1,
+        "insuranceId1": 2,
+        "insuranceId2": 0
     },
     {
         "patientId": 2,
@@ -23,6 +26,9 @@
         "zip": "48307",
         "phone": "111-222-3333",
         "dateOfBirth": "1980-01-15",
-        "gender": "M"
+        "gender": "M",
+        "doctorId": 1,
+        "insuranceId1": 1,
+        "insuranceId2": 0
     }
 ]

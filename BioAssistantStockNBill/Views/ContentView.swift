@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var cdDataController: CDDataController
     @ObservedObject var jsonHelper: JsonDataHelper
+    
+    @EnvironmentObject var cdDataController: CDDataController
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -17,20 +18,20 @@ struct ContentView: View {
         return formatter
     }()
     
-    init(cdDataController: CDDataController) {
-        self.cdDataController = cdDataController
+    init() {
         self.jsonHelper = JsonDataHelper()
     }
 
     
     var body: some View {
         TabView {
-            OrderListView()
+            OrderListView2()
                 .tabItem {
                     Label("Orders", systemImage: "list.bullet")
                 }
-            DataAssistView(cdDataController: cdDataController)
+            DataAssistView()
                 .environmentObject(jsonHelper)
+                //.environmentObject(cdDataController)
                 .tabItem {
                     Label("Data Utils", systemImage: "swiftdata")
                 }
@@ -40,10 +41,10 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(cdDataController: CDDataController()).previewInterfaceOrientation(.landscapeLeft)
+        ContentView().previewInterfaceOrientation(.landscapeLeft)
     }
 }
 
 #Preview {
-    ContentView(cdDataController: CDDataController())
+    ContentView()
 }
